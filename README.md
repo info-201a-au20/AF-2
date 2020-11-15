@@ -28,3 +28,12 @@ Question 2: What correlation does voter turnout percentages have on the differen
 Question 3: What does age and race have to do with the voter turnout of the presidential election?
 - Using collected data of voter turnout, we can analyze the demographics of that turnout to see what demographics are most present in voter turnout, and which are least present.
 
+# Finding Data
+### Data set 1: [Winning Odds and Actual Number of Votes](https://www.ourprogress.org/forecast)
+- This data was found on The Progress Campaign (https://www.ourprogress.org/), an American progressive political organizing group that works and volunteers on down-ballot campaigns. 
+- The dataset was collected by studying historical voting patterns and Census data. 
+- There are 5 rows in the dataset.
+- There are 58 columns in the dataset.
+- Questions that this dataset helps anwer are: 
+- - How much was the result of the 2020 election different from the predicted odds?
+
