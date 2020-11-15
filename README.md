@@ -36,11 +36,17 @@ Question 3: What does age and race have to do with the voter turnout of the pres
 - There are 58 columns in the dataset.
 - Questions that this dataset helps anwer are: 
    - How much was the result of the 2020 election different from the predicted odds?
-   ### Data set 2: Voter Turnout in Presidential Election in [2016](http://www.electproject.org/2016g) and [2020](http://www.electproject.org/2020g)
+### Data set 2: Voter Turnout in Presidential Election in [2016](http://www.electproject.org/2016g) and [2020](http://www.electproject.org/2020g)
   -  This data was found on [The United States Elections Project](http://www.electproject.org/ ), an information source for the United States electoral system.
    - This dataset was collected from the Census Bureau's July 1, 2018 and July 1, 2019 voting-age population estimates interpolated to Nov. 1, 2020, the 2019 1-Year American Community Survey, the year-end 2018 DOJ prison report, and the year-end 2018 DOJ probation and parole report.
    - There are 55 rows in the Presidential Election in 2016 dataset and 54 rows in the Presidential Election in 2020 dataset.
    - There are 17 columns in the Presidential Election in 2016 dataset and 15 columns in the Presidential Election in 2020 dataset.
    - Questions that this dataset helps anwer are:
       - What correlation does voter turnout percentages have on the difference between predicted odds and actual votes?
-
+### Data set 3: Population Distribution by [Age](https://www.kff.org/other/state-indicator/distribution-by-age/?currentTimeframe=0&sortModel=%7B%22colId%22:%22Location%22,%22sort%22:%22asc%22%7D) and [Race](https://www.kff.org/other/state-indicator/distribution-by-raceethnicity/?currentTimeframe=0&sortModel=%7B%22colId%22:%22Location%22,%22sort%22:%22asc%22%7D)
+- This data was found on KFF [Kaiser Family Foundation](https://www.kff.org/), a non-profit organization which provides various news, policies, and datasets associated with health issues in the U.S. 
+- This data is based on analysis of the Census Bureau’s American Community Survey. KFF estimates this data annually based on the 2008-2019 American Community Survey.
+- There are 73 rows in both datasets, the Population Distribution by Age and the Population Distribution by Race.
+- There are 9 columns in the Population Distribution by Age dataset and 10 columns in the Population Distribution by race dataset. 
+- Questions that this dataset helps anwer are: 
+   - What does age and race have to do with the voter turnout of the presidential election? 
