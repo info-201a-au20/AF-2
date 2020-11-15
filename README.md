@@ -30,10 +30,17 @@ Question 3: What does age and race have to do with the voter turnout of the pres
 
 # Finding Data
 ### Data set 1: [Winning Odds and Actual Number of Votes](https://www.ourprogress.org/forecast)
-- This data was found on The Progress Campaign (https://www.ourprogress.org/), an American progressive political organizing group that works and volunteers on down-ballot campaigns. 
+- This data was found on [The Progress Campaign](https://www.ourprogress.org/), an American progressive political organizing group that works and volunteers on down-ballot campaigns. 
 - The dataset was collected by studying historical voting patterns and Census data. 
 - There are 5 rows in the dataset.
 - There are 58 columns in the dataset.
 - Questions that this dataset helps anwer are: 
-- - How much was the result of the 2020 election different from the predicted odds?
+   - How much was the result of the 2020 election different from the predicted odds?
+   ### Data set 2: Voter Turnout in Presidential Election in [2016](http://www.electproject.org/2016g) and [2020](http://www.electproject.org/2020g)
+  -  This data was found on [The United States Elections Project](http://www.electproject.org/ ), an information source for the United States electoral system.
+   - This dataset was collected from the Census Bureau's July 1, 2018 and July 1, 2019 voting-age population estimates interpolated to Nov. 1, 2020, the 2019 1-Year American Community Survey, the year-end 2018 DOJ prison report, and the year-end 2018 DOJ probation and parole report.
+   - There are 55 rows in the Presidential Election in 2016 dataset and 54 rows in the Presidential Election in 2020 dataset.
+   - There are 17 columns in the Presidential Election in 2016 dataset and 15 columns in the Presidential Election in 2020 dataset.
+   - Questions that this dataset helps anwer are:
+      - What correlation does voter turnout percentages have on the difference between predicted odds and actual votes?
 
