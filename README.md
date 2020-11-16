@@ -41,7 +41,7 @@ What does age and race have to do with the voter turnout of the presidential ele
 - There are 5 rows in the dataset.
 - There are 58 columns in the dataset.
 - Questions that this dataset helps anwer are: 
-   - How much was the result of the 2020 election different from the predicted odds?
+- How much was the result of the 2020 election different from the predicted odds?
 ### Data set 2: Voter Turnout in Presidential Election in [2016](http://www.electproject.org/2016g) and [2020](http://www.electproject.org/2020g)
   -  This data was found on [The United States Elections Project](http://www.electproject.org/ ), an information source for the United States electoral system.
    - This dataset was collected from the Census Bureau's July 1, 2018 and July 1, 2019 voting-age population estimates interpolated to Nov. 1, 2020, the 2019 1-Year American Community Survey, the year-end 2018 DOJ prison report, and the year-end 2018 DOJ probation and parole report.
