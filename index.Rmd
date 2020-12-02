@@ -8,6 +8,8 @@ knitr::opts_chunk$set(echo = TRUE)
 library(knitr)
 library(dplyr)
 library(ggplot2)
+library(plotly)
+library(reshape2)
 source("./scripts/sum_info.R")
 source("./scripts/sum_table.R")
 source("./scripts/chart_one.R")
@@ -27,7 +29,7 @@ Summary paragraph with information taken from summary info.
 this table is super cool
 
 ```{r}
-#chart 1
+chart_one(data)
 ```
 We did this chart because...
 ```{r}
