@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Loading library needed
 library("dplyr")
 
@@ -7,6 +6,7 @@ age_data_table <- read.csv("data/demographics_age.csv",
                            stringsAsFactors = FALSE,
                            na.strings = FALSE)
 
+# Function that returns a table
 sum_table_age <- function(data_fr) {
   sum_race_table <- data_fr %>%
     group_by(Location) %>%
@@ -19,25 +19,3 @@ sum_table_age <- function(data_fr) {
                                    align = "l")
     return(eligible_voters_kable)
 }
-=======
-# Loading library needed
-library("dplyr")
-library("knitr")
-# Loading needed data frame
-age_data_table <- read.csv("data/demographics_age.csv",
-                           stringsAsFactors = FALSE,
-                           na.strings = FALSE)
-
-sum_table_age <- function(data_fr) {
-  sum_race_table <- data_fr %>%
-    group_by(Location) %>%
-    mutate(eligible_voters = 1 - Children.0.18) %>%
-    arrange(-eligible_voters) %>%
-    select(Location, eligible_voters)
-    eligible_voters_kable <- kable(sum_race_table,
-                                   col.names = c("Location",
-                                                 "# of Eligible Voters"),
-                                   align = "l")
-    return(eligible_voters_kable)
-}
->>>>>>> 7a333895368f866ad185eddfc1da9859946ba9bf
