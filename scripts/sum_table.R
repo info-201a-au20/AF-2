@@ -18,4 +18,3 @@ sum_table_age <- function(data_fr) {
                                    align = "l")
     return(eligible_voters_kable)
 }
-sum_table_age(age_data_table)
