@@ -1,6 +1,6 @@
 # Loading library needed
 library("dplyr")
-
+library("knitr")
 # Loading needed data frame
 age_data_table <- read.csv("data/demographics_age.csv",
                            stringsAsFactors = FALSE,
