@@ -1,16 +1,12 @@
-<<<<<<< HEAD
 ---
 title: "Midpoint Deliverable"
-author: "Jiyeong Kang, Riley, Paul"
+author: "Jiyeong Kang, Riley Bell, Paul"
 date: "12/02/2020"
 output: html_document
 ---
 
-# Midpoint Deliverable
-### Jiyeong Kang, Riley, Paul
-### 12/02/2020
-
 ```{r setup, include=FALSE}
+library(knitr)
 source("scripts/sum_info.R")
 source("scripts/sum_table.R")
 source("scripts/chart_one.R")
@@ -20,70 +16,42 @@ source("scripts/chart_three.R")
 
 ## 2020 President Election Data Analysis
 
-
+For our domain of interest, we decided to look at the presidential election. More specifically we chose to explore the 2020 election. We decided to compare multiple data sets; the election results state by state, and population distribution data, also on a state level. Of the population distribution data sets, the first data set catalogs the race demographics of each state, and the second catalogs the age demographics, also of each state. We will be analyzing party preference, and the demographics of the people belonging to those parties. Doing this will give us important insights about the political landscape of the United States, and give us relevant information about a historic election.
 
 ## Quick Data
 
-We found that during the 2020 election, the state that had the most white voters was `r most_white_state`. The least white state was `r least_white_state`. The state with the most black population was `r most_black_pop_state`. We also used age as a filter to the data and found that the state with the oldest population was `r state_with_old_pop`.The state with the youngest population was `r state_with_young_pop`.
+We found that during the 2020 election the state with the largest white population was **`r most_white_state`**. Racial injustice has been one of the main topics discussed during this election season, by analyzing this data and comparing it with how the state voted, we can begin to see if there is a correlation. The state with the smallest white population was **`r least_white_state`**. By looking at the state with the smallest white population, we can also make correlations of voting behavior based on race. The state with the largest black population was **`r most_black_pop_state`**. This gives us insight on how the largest minority group votes. We also explored age demographics, and found that the state with the oldest population was **`r state_with_old_pop`**. Comparing information about age, will give us a better understanding of how age correlates with party affiliation. The state with the youngest population was **`r state_with_young_pop`**. On the opposite of the spectrum, we can see how the newer generation of the United States politically aligns themselves.
+
+## Table of Eligible Voters in Different States
+The natural grouping of the 50 states that make up the U.S. is an extremely helpful way to separate information, so in this table we decided to do the same. Since the data sets weren’t necessarily connected to one another, we decided to aggregate the data to summarize the eligible voter population in each state, to better be able to compare the different data sets (since you have to be 18 to vote).
+
+```{r, echo=FALSE}
+sum_table_age(age_data_table)
+```
+
+We can notice in this table that the state with the largest population of eligible voters is Maine, who also has the largest white population in the United States. We can also notice the District of Columbia, the city with the largest population of black people, is the city with the second largest population of eligible voters. We can use these correlations in the data sets to further understand the political climate of the United States.
 
 ## Charts
 ### **Chart 1**
-`r chart_one(data)`
+```{r, echo=FALSE}
+chart_one(data_race)
+```
 
-This chart provides the **race distribution in four different states in the United States: Kentucky, Wyoming, California, and New York.** It was included to seek the _correlation between the race distribution in certain states and the party those states support._ The chart reveals that the percentage of white people is significantly higher than that of other races in Kentucky and Wyoming while white people are not as much predominant in California and New York.  
-
+This chart provides the **race distribution in four different states in the United States: Kentucky, Wyoming, California, and New York.** It was included to seek the _correlation between the race distribution in certain states and the party those states support._ The chart reveals that the percentage of white people is significantly higher than that of other races in Kentucky and Wyoming while white people are not as much predominant in California and New York.
+This data was found on KFF Kaiser Family Foundation, a non-profit organization which provides various news, policies, and datasets associated with health issues in the U.S.
 
 ### **Chart 2**
-`r chart_two(data)`
+```{r, echo=FALSE}
+chart_two(data_age)
+```
 
 This chart visualizes the **age distribution in four different states in the United States: Utah, Maine, New Hampshire, and District of Columbia (Washington DC).** It was included to find the _correlation between the age distribution in certain states and the party that state supports._ The chart reveals that the percentage of the population of adults over 35-years-old takes more than half of the population in Maine and New Hampshire while the population of adults under 35-years-old takes up more than half of the population in District of Columbia and Utah. Thereby, the average age of people in Maine and New Hampshire is considerably higher than that of people in District of Columbia and Utah.
+This data was found on KFF Kaiser Family Foundation, a non-profit organization which provides various news, policies, and datasets associated with health issues in the U.S.
 
 ### **Chart 3**
-`r chart_three(data)`
+```{r, echo=FALSE}
+chart_three(data_result)
+```
 
 This chart shows the **most popular political affiliation from the states from charts above.** Comparing chart 1 and 3, it reveals that **California and New York,** _which has high percentages of non-white people,_ had a significant number of people who **support Democrats,** while **Kentucky and Wyoming,** _which had distinctly high percentages of white people,_ had a high number people who **support Republicans.** However, comparing chart 2 and 3, it shows that there is **no correlation between age distribution in states and their party affiliation** since Utah and Washington D.C., which have relatively lower average age of people than the others, support different parties.
-=======
----
-title: "index"
-output: html_document
----
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-library(knitr)
-library(dplyr)
-library(ggplot2)
-library(plotly)
-library(reshape2)
-source("./scripts/sum_info.R")
-source("./scripts/sum_table.R")
-source("./scripts/chart_one.R")
-source("./scripts/chart_two.R")
-source("./scripts/chart_three.R")
-```
-
-## R Markdown
-
-Intro paragraph of what we are going to be doing our report on.
-We chose our  domain to be the presidential election. More specifically we chose to  do the 2020 election. We do understand that most of our data is unoffocial. So we understand that most  of our assumption in this report could change should any statistically significant amount of votes was thrown out by the supreme court. So we chose to focuse on age and race as factors in the election.
-
-We found that during the 2020 election the state that had the most white voters was `r most_white_state`. The least white state was `r least_white_state`. The state with the most black population was `r most_black_pop_state`. We also used age as a filter  to the data and found that the state with the oldest population was `r state_with_old_pop`.The state with the youngest population was `r state_with_young_pop`. 
-
-```{r}
-#table
-```
-this table is super cool
-
-```{r}
-chart_one(data)
-```
-We did this chart because...
-```{r}
-#chart 2
-```
-We did this chart because...
-```{r}
-#chart 3
-```
-We did this chart because...
->>>>>>> 0cab4ac10a15c4773380f49c141ff9dd88e22ab2
+This data was found on The Progress Campaign, an American progressive political organizing group that works and volunteers on down-ballot campaigns.

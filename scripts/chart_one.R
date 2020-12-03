@@ -1,9 +1,13 @@
-data <- read.csv("data/demographics_race.csv", stringsAsFactors = FALSE)
+# Loading needed data frame
+data_race <- read.csv("data/demographics_race.csv", stringsAsFactors = FALSE)
+
+# Loading library needed
 library("dplyr")
 library("ggplot2")
 library("plotly")
 library("reshape2")
 
+# Function that returns a stacked bar chart for visualization
 chart_one <- function(data) {
   filtered_df <- data %>%
     select(Location, Asian, Hispanic, White, Black) %>%

@@ -1,8 +1,12 @@
-data <- read.csv("data/demographics_age.csv", stringsAsFactors = FALSE)
+# Loading needed data frame
+data_age <- read.csv("data/demographics_age.csv", stringsAsFactors = FALSE)
+
+# Loading library needed
 library("dplyr")
 library("ggplot2")
 library("plotly")
 
+# Function that returns a pie chart for visualization
 chart_two <- function(data) {
   filtered_df <- data %>%
     rename(Adults.over.65 = X65.) %>%
