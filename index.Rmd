@@ -1,0 +1,42 @@
+---
+title: "index"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(knitr)
+library(dplyr)
+library(ggplot2)
+library(plotly)
+library(reshape2)
+source("./scripts/sum_info.R")
+source("./scripts/sum_table.R")
+source("./scripts/chart_one.R")
+source("./scripts/chart_two.R")
+source("./scripts/chart_three.R")
+```
+
+## R Markdown
+
+Intro paragraph of what we are going to be doing our report on.
+
+Summary paragraph with information taken from summary info.
+
+```{r}
+#table
+```
+this table is super cool
+
+```{r}
+chart_one(data)
+```
+We did this chart because...
+```{r}
+#chart 2
+```
+We did this chart because...
+```{r}
+#chart 3
+```
+We did this chart because...
