@@ -20,8 +20,9 @@ source("./scripts/chart_three.R")
 ## R Markdown
 
 Intro paragraph of what we are going to be doing our report on.
+We chose our  domain to be the presidential election. More specifically we chose to  do the 2020 election. We do understand that most of our data is unoffocial. So we understand that most  of our assumption in this report could change should any statistically significant amount of votes was thrown out by the supreme court. So we chose to focuse on age and race as factors in the election.
 
-Summary paragraph with information taken from summary info.
+We found that during the 2020 election the state that had the most white voters was `r most_white_state`. The least white state was `r least_white_state`. The state with the most black population was `r most_black_pop_state`. We also used age as a filter  to the data and found that the state with the oldest population was `r state_with_old_pop`.The state with the youngest population was `r state_with_young_pop`. 
 
 ```{r}
 #table

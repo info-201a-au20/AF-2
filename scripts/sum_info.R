@@ -27,3 +27,4 @@ race_sum_info <- function(da_frame) {
                                              max(da_frame$Black), "Location"]
   return(r_sum_list)
 }
+
