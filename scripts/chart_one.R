@@ -7,12 +7,17 @@ library("reshape2")
 chart_one <- function(data) {
   filtered_df <- data %>%
     select(Location, Asian, Hispanic, White, Black) %>%
-    mutate(Other = 1 - (Asian + Hispanic + White + Black)) %>% 
+    mutate(Other = 1 - (Asian + Hispanic + White + Black)) %>%
     filter(Location == "California" | Location == "New York"
            | Location == "Kentucky" | Location == "Wyoming")
-  long <- melt(filtered_df, id = c("Location"))
-  ggplot(long, aes(x = Location, y = value, fill = variable)) +
+  long <- melt(filtered_df, id = c("Location")) %>%
+    rename(race = variable, percentage = value)
+  long$percentage <- long$percentage * 100
+  bar_graph <- ggplot(long, aes(x = Location, y = percentage, fill = race)) +
     geom_bar(stat = "identity") +
+    scale_fill_brewer(palette = "Accent") +
     labs(title = "Race Distribution in Different States",
-         y = "Ratio")
+         y = "Percentage (%)")
+  chart <- ggplotly(bar_graph)
+  return(chart)
 }
