@@ -1,14 +1,21 @@
+# Loading library needed
 library("dplyr")
-source("./scripts/sum_info.R")
 
+# Loading needed data frame
+age_data_table <- read.csv("data/demographics_age.csv",
+                           stringsAsFactors = FALSE,
+                           na.strings = FALSE)
 
-summary_info <- age_sum_info(age_data)
-summary_race <- race_sum_info(race_data)
-
-d_frame <- data.frame(summary_info, summary_race)
-
-most_white_state <- pull(d_frame,most_white_state)
-least_white_state <- pull(d_frame,least_white_state)
-state_with_old_pop <- pull(d_frame,state_old_pop)
-state_with_young_pop <- pull(d_frame, state_young_pop)
-most_black_pop_state <- pull(d_frame, largest_black_pop)
+sum_table_age <- function(data_fr) {
+  sum_race_table <- data_fr %>%
+    group_by(Location) %>%
+    mutate(eligible_voters = 1 - Children.0.18) %>%
+    arrange(-eligible_voters) %>%
+    select(Location, eligible_voters)
+    eligible_voters_kable <- kable(sum_race_table,
+                                   col.names = c("Location",
+                                                 "# of Eligible Voters"),
+                                   align = "l")
+    return(eligible_voters_kable)
+}
+sum_table_age(age_data_table)
