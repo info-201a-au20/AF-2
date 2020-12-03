@@ -1,42 +1,43 @@
 ---
-title: "index"
+title: "Midpoint Deliverable"
+author: "Jiyeong Kang, Riley, Paul"
+date: "12/02/2020"
 output: html_document
 ---
 
+# Midpoint Deliverable
+### Jiyeong Kang, Riley, Paul
+### 12/02/2020
+
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-library(knitr)
-library(dplyr)
-library(ggplot2)
-library(plotly)
-library(reshape2)
-source("./scripts/sum_info.R")
-source("./scripts/sum_table.R")
-source("./scripts/chart_one.R")
-source("./scripts/chart_two.R")
-source("./scripts/chart_three.R")
+source("scripts/sum_info.R")
+source("scripts/sum_table.R")
+source("scripts/chart_one.R")
+source("scripts/chart_two.R")
+source("scripts/chart_three.R")
 ```
 
-## R Markdown
+## 2020 President Election Data Analysis
 
-Intro paragraph of what we are going to be doing our report on.
 
-Summary paragraph with information taken from summary info.
 
-```{r}
-#table
-```
-this table is super cool
+## Quick Data
 
-```{r}
-chart_one(data)
-```
-We did this chart because...
-```{r}
-#chart 2
-```
-We did this chart because...
-```{r}
-#chart 3
-```
-We did this chart because...
+We found that during the 2020 election, the state that had the most white voters was `r most_white_state`. The least white state was `r least_white_state`. The state with the most black population was `r most_black_pop_state`. We also used age as a filter to the data and found that the state with the oldest population was `r state_with_old_pop`.The state with the youngest population was `r state_with_young_pop`.
+
+## Charts
+### **Chart 1**
+`r chart_one(data)`
+
+This chart provides the **race distribution in four different states in the United States: Kentucky, Wyoming, California, and New York.** It was included to seek the _correlation between the race distribution in certain states and the party those states support._ The chart reveals that the percentage of white people is significantly higher than that of other races in Kentucky and Wyoming while white people are not as much predominant in California and New York.  
+
+
+### **Chart 2**
+`r chart_two(data)`
+
+This chart visualizes the **age distribution in four different states in the United States: Utah, Maine, New Hampshire, and District of Columbia (Washington DC).** It was included to find the _correlation between the age distribution in certain states and the party that state supports._ The chart reveals that the percentage of the population of adults over 35-years-old takes more than half of the population in Maine and New Hampshire while the population of adults under 35-years-old takes up more than half of the population in District of Columbia and Utah. Thereby, the average age of people in Maine and New Hampshire is considerably higher than that of people in District of Columbia and Utah.
+
+### **Chart 3**
+`r chart_three(data)`
+
+This chart shows the **most popular political affiliation from the states from charts above.** Comparing chart 1 and 3, it reveals that **California and New York,** _which has high percentages of non-white people,_ had a significant number of people who **support Democrats,** while **Kentucky and Wyoming,** _which had distinctly high percentages of white people,_ had a high number people who **support Republicans.** However, comparing chart 2 and 3, it shows that there is **no correlation between age distribution in states and their party affiliation** since Utah and Washington D.C., which have relatively lower average age of people than the others, support different parties.
