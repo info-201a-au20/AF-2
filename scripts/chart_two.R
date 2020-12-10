@@ -5,6 +5,7 @@ data_age <- read.csv("data/demographics_age.csv", stringsAsFactors = FALSE)
 library("dplyr")
 library("ggplot2")
 library("plotly")
+library("reshape2")
 
 # Function that returns a pie chart for visualization
 chart_two <- function(data) {
@@ -28,3 +29,4 @@ chart_two <- function(data) {
     labs(title = "Age Distribution in Different States")
   return(pie_graph)
 }
+chart_two(data)
