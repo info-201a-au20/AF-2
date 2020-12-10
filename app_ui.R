@@ -84,7 +84,10 @@ race_sidebar_content <- sidebarPanel(
 
 # Main content of page one
 race_main_content <- mainPanel(
-  p("This chart provides the race distribution in four different states in the United States."),
+  p("United States consists of 52 distinct states and each state has",
+    "its own unique ratio of various races. This page lets the user choose",
+    "four states to compare, then the bar chart will provide the race",
+    "distribution accordingly in four different states."),
   plotlyOutput(outputId = "bar_race")
 )
 
@@ -180,7 +183,12 @@ election_sidebar_content <- sidebarPanel(
 
 # Main content of page two
 election_main_content <- mainPanel(
-  p("This chart shows the most popular political affiliation from four different states."),
+  p("From the result of 2020 president election, we were able to see that",
+    "this election was a very close call. From this page, users are able to",
+    "pick and choose four different state and a stacked bar chart will show",
+    "the number of votes voted in favor of Biden and Trump represented in",
+    "blue and red along with the popular political affiliation amongst those",
+    "states."),
   plotlyOutput(outputId = "bar_election")
 )
 
@@ -208,6 +216,7 @@ overview_main_content <- mainPanel(
 )
 
 overview_sidebar_content <- sidebarPanel(
+  
 )
 
 overview_panel <- tabPanel(
