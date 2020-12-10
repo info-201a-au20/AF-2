@@ -1,8 +1,8 @@
 library(shiny)
 library(plotly)
+library(knitr)
 
-
-### Page One
+### Interaction Page One
 # Lets the users input four states where they want to compare
 race_sidebar_content <- sidebarPanel(
   selectInput("Location1",
@@ -40,7 +40,7 @@ race_sidebar_content <- sidebarPanel(
                 "Minnesota" = "Minnesota",
                 "Mississippi" = "Mississippi",
                 "Missouri" = "Missouri",
-                "Montana"= "Montana"
+                "Montana" = "Montana"
               ),
               selected = "Idaho"
   ),
@@ -82,7 +82,7 @@ race_sidebar_content <- sidebarPanel(
   )
 )
 
-# Main content of page one
+# Main content of interaction page one
 race_main_content <- mainPanel(
   p("United States consists of 52 distinct states and each state has",
     "its own unique ratio of various races. This page lets the user choose",
@@ -101,7 +101,7 @@ race_panel <- tabPanel(
   )
 )
 
-### Page Two
+### Interaction Page Two
 # Lets the users input four states where they want to compare
 election_sidebar_content <- sidebarPanel(
   selectInput("State1",
@@ -139,7 +139,7 @@ election_sidebar_content <- sidebarPanel(
                 "Minnesota" = "MN",
                 "Mississippi" = "MS",
                 "Missouri" = "MO",
-                "Montana"= "MT"
+                "Montana" = "MT"
               ),
               selected = "Idaho"
   ),
@@ -181,7 +181,7 @@ election_sidebar_content <- sidebarPanel(
   )
 )
 
-# Main content of page two
+# Main content of interaction page two
 election_main_content <- mainPanel(
   p("From the result of 2020 president election, we were able to see that",
     "this election was a very close call. From this page, users are able to",
@@ -243,8 +243,8 @@ conclusion_panel <- tabPanel(
     conclusion_page,
     conclusion_sidebar
   )
-  
 )
+
 ui <- fluidPage(
   includeCSS("style.css"),
   navbarPage(

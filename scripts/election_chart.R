@@ -13,7 +13,7 @@ chart_election <- function(data_election, state1, state2, state3, state4) {
     rename(Biden = Biden.Votes, Trump = Trump.Votes) %>%
     select(State, Biden, Trump) %>%
     filter(State == state1 | State == state2 | State == state3
-           | State == state4) 
+           | State == state4)
   long <- melt(filtered_df, id = c("State")) %>%
     rename(Votes = variable)
   bar_garph <- ggplot(long, aes(x = State, y = value, fill = Votes)) +
