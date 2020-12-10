@@ -1,3 +1,12 @@
+form > div > img {
+  width: 370px;
+  height: 370px;
+}
+ h2 {
+  font-weight: bold;
+  color: white;
+}
+
 titlePanel {
   color: white;
 }
@@ -8,4 +17,10 @@ color: white;
 
 body {
   background-color: gray;
+}
+
+form > #map {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

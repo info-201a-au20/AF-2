@@ -204,24 +204,41 @@ election_panel <- tabPanel(
 
 # Main content of overview page
 overview_main_content <- mainPanel(
-  h2("Focus of the project"),
+  h2("Overview"),
   p(
-    "In this project we wanted to know the affect of Race in elections.",
-    " We determined not to focus on the white race because in almost every",
-    " state they are the majority. So it would be hard to determine if race",
-    " played a factor in that state. So we decided to look at",
-    strong("Non-White"),
-    "races. First we took the demographical data of each state and converted",
-    " it into percentages. We created a graph for the race percentages in",
-    " each state. we also determined the odds of the white race and non-white",
-    " race would vote for trump."
+    "Our domain of interest was to find out how different demographics of",
+    "each state have affected the political affiliation of the states which",
+    "leads to a positive result of the 2020 president election. With this",
+    "interest in mind we wanted to compare two different datasets: age",
+    "and race demographics of each state and the numbers of actual votes",
+    "from each state. As we progress through our research and analyzing",
+    "data, we found out that age distribution did not seem to be a factor",
+    "of the election results. So we chose to focus more on race distribution",
+    "which showed us some sort of correlation."
     ),
+  h2("Major Questions"),
+  p("Did age distribution have any sort of affect on the political",
+    "affiliation within each state?"),
+  p("Did race distribution have any sort of affect on the political",
+    "affiliation within each state?"),
+  p("What was the number of actual votes casted to each candidate and what",
+    "was the result within each state?"),
+  h2("Datasets"),
+  p("To answer our major questions, we have endeavored to find age and race",
+    "demographics datasets of each state and the dataset that contains data",
+    "of actual number of votes and the corresponding party affiliation of",
+    "each state.")
 )
 
 # Has the image for the page
 overview_sidebar_content <- sidebarPanel(
-    img(src = "data/electoral_map_2020"),
-    h6("This is the Final electoral map of the 2020 election")
+  div(id = "map",
+      h3("2020 Election Map"),
+      img(
+        alt = "2020 Election Map", src =
+        "https://d28695kzbtos76.cloudfront.net/elections/election-results/components/NationalMap/president/screenshots/2020-11-03_USA_G_P_NationalMap-0-232.png"
+        )
+    )
 )
 
 # combines  sidepanel and mainpanel
@@ -261,4 +278,3 @@ ui <- fluidPage(
     election_panel
   )
 )
-
