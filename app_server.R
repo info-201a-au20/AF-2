@@ -27,8 +27,7 @@ server <- function(input, output) {
                           input$State3, input$State4))
   })
   # Page 4
-  output$trump_white_table <- renderTable({
-    trump_white_table <- function(data_fr) {
+  output$trump_white_table <- trump_white_table <- function(data_fr) {
       trump_vote_table <- data_fr %>%
         group_by(Location) %>%
         arrange(desc(Trump.Odds), -White) %>%
@@ -42,10 +41,7 @@ server <- function(input, output) {
                                   align = "l")
       return(trump_voters_kable)
     }
-    trump_white_table(race_and_vote)
-  })
-  output$trump_nonwhite_table <- renderTable({
-    trump_nonwhite_table <- function(da_fr) {
+  output$trump_nonwhite_table <- trump_nonwhite_table <- function(da_fr) {
       trump_nonwhite_vote <- da_fr %>%
         group_by(Location) %>%
         mutate(nonwhite_vote = 1 - White) %>%
@@ -60,9 +56,7 @@ server <- function(input, output) {
                                     align = "l")
       return(trump_nonwhite_kable)
     }
-  })
-  output$biden_age_table <- renderTable({
-    biden_age_table <- function(dat_fr) {
+  output$biden_age_table <- biden_age_table <- function(dat_fr) {
       biden_age_vote <- dat_fr %>%
         group_by(Location) %>%
         arrange(desc(Biden.Odds), -Adults.19.25) %>%
@@ -76,5 +70,4 @@ server <- function(input, output) {
                                align = "l")
       return(biden_age_kable)
     }
-  })
 }
