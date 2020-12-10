@@ -82,8 +82,9 @@ race_sidebar_content <- sidebarPanel(
   )
 )
 
+# Main content of page one
 race_main_content <- mainPanel(
-  p("Each stacked bar graph shows different states' race distributions"),
+  p("This chart provides the race distribution in four different states in the United States."),
   plotlyOutput(outputId = "bar_race")
 )
 
@@ -97,6 +98,8 @@ race_panel <- tabPanel(
   )
 )
 
+### Page Two
+# Lets the users input four states where they want to compare
 election_sidebar_content <- sidebarPanel(
   selectInput("State1",
               label = "State A to H",
@@ -175,15 +178,16 @@ election_sidebar_content <- sidebarPanel(
   )
 )
 
+# Main content of page two
 election_main_content <- mainPanel(
-  p("Each side-by-side bar graph shows which party the state supports"),
+  p("This chart shows the most popular political affiliation from four different states."),
   plotlyOutput(outputId = "bar_election")
 )
 
 # Combines sidepanel and mainpanel
 election_panel <- tabPanel(
   "Election",
-  titlePanel("Election in Different States"),
+  titlePanel("Election Results in Different States"),
   sidebarLayout(
     election_main_content,
     election_sidebar_content
@@ -216,7 +220,7 @@ overview_panel <- tabPanel(
 )
 
 ui <- fluidPage(
-  loadEChartsLibrary(),
+  includeCSS("style.css"),
   navbarPage(
     "AF2 - 2020 Presidential Election",
     overview_panel,
@@ -224,4 +228,3 @@ ui <- fluidPage(
     election_panel
   )
 )
-
