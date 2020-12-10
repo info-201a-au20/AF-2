@@ -253,20 +253,38 @@ overview_panel <- tabPanel(
 
 # Conclusion Page
 conclusion_page <- mainPanel(
-  tableOutput(trump_white_table(race_and_vote)),
-  tableOutput(trump_nonwhite_table(race_and_vote)),
-  tableOutput(biden_age_table(age_and_vote))
+  h2("States with a higher population of white people tend to have higher",
+     "odds of Donald Trump winning in that state."),
+  p("States including West Virginia, Kentucky, and North Dakota had a",
+    "projected 99.9% of Trump winning in that state. What all these states",
+    "have in common is the large white majority, West Virginia's population",
+    "being 0.925 white. This correlation gives us implications that Trump's",
+    "leading demographic is white people, and gives us insight on how race",
+    "plays into political view."),
+  h2("States with a large population of non-white people tend to have",
+     "lower odds of Trump winning in that state."),
+  p("States including Hawaii, California, and Maryland had extremely low odds",
+    "of Trump winning in that state. Hawaii having a non-white populace of",
+    "0.796, had a projected 0.1% of Trump winning in that state, as well as",
+    "the other states listed above. This tells us that there is an",
+    "association between non-white voters and political view, in this",
+    "case, not voting for Trump"),
+  h2("States with more young eligible voters had a higher chance of Joe Biden",
+     "winning in that state."),
+  p("States including California, Rhode Island, and Illinois had the highest",
+    "numbers of people aged 19-25 (0.092, 0.088, 0.087 respectively). In all",
+    "these states, Biden's odds of winning were 99.9%. 19-25 being among the",
+    "youngest of eligible voters, this tells us there is a correlation",
+    "between voting age and political view. That states with large",
+    "populations of young voters were more likely to vote for Biden, and",
+    "that there may be a correlation between young people and voting",
+    "for Biden.")
 )
-conclusion_sidebar <- sidebarPanel(
-  h1("Testing")
-)
+
 conclusion_panel <- tabPanel(
-  "Conclusion Information",
-  titlePanel("Conclusion Information of Odds, Race, and Age"),
-  sidebarLayout(
-    conclusion_page,
-    conclusion_sidebar
-  )
+  "Takeaways",
+  titlePanel("Takeaways:"),
+    conclusion_page
 )
 
 ui <- fluidPage(
@@ -275,6 +293,7 @@ ui <- fluidPage(
     "AF2 - 2020 Presidential Election",
     overview_panel,
     race_panel,
-    election_panel
+    election_panel,
+    conclusion_panel
   )
 )
