@@ -202,6 +202,7 @@ election_panel <- tabPanel(
   )
 )
 
+# Main content of overview page
 overview_main_content <- mainPanel(
   h2("Focus of the project"),
   p(
@@ -211,14 +212,19 @@ overview_main_content <- mainPanel(
     " played a factor in that state. So we decided to look at",
     strong("Non-White"),
     "races. First we took the demographical data of each state and converted",
-    " it into percentages."
+    " it into percentages. We created a graph for the race percentages in",
+    " each state. we also determined the odds of the white race and non-white",
+    " race would vote for trump."
     ),
 )
 
+# Has the image for the page
 overview_sidebar_content <- sidebarPanel(
-  
+    img(src = "data/electoral_map_2020"),
+    h6("This is the Final electoral map of the 2020 election")
 )
 
+# combines  sidepanel and mainpanel
 overview_panel <- tabPanel(
   "Overview",
   titlePanel("Overview of the Project"),
@@ -227,6 +233,7 @@ overview_panel <- tabPanel(
     overview_sidebar_content
   )
 )
+
 # Conclusion Page
 conclusion_page <- mainPanel(
   tableOutput(trump_white_table(race_and_vote)),
@@ -251,7 +258,7 @@ ui <- fluidPage(
     "AF2 - 2020 Presidential Election",
     overview_panel,
     race_panel,
-    election_panel,
-    conclusion_panel
+    election_panel
   )
 )
+
