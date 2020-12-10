@@ -190,11 +190,38 @@ election_panel <- tabPanel(
   )
 )
 
+overview_main_content <- mainPanel(
+  h2("Focus of the project"),
+  p(
+    "In this project we wanted to know the affect of Race in elections.",
+    " We determined not to focus on the white race because in almost every",
+    " state they are the majority. So it would be hard to determine if race",
+    " played a factor in that state. So we decided to look at",
+    strong("Non-White"),
+    "races. First we took the demographical data of each state and converted",
+    " it into percentages."
+    ),
+)
+
+overview_sidebar_content <- sidebarPanel(
+)
+
+overview_panel <- tabPanel(
+  "Overview",
+  titlePanel("Overview of the Project"),
+  sidebarLayout(
+    overview_main_content,
+    overview_sidebar_content
+  )
+)
+
 ui <- fluidPage(
   loadEChartsLibrary(),
   navbarPage(
     "AF2 - 2020 Presidential Election",
+    overview_panel,
     race_panel,
     election_panel
   )
 )
+

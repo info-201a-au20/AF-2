@@ -5,8 +5,8 @@ date: "12/02/2020"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
-library(knitr)
+```{r, include=FALSE}
+library("knitr")
 source("scripts/sum_info.R")
 source("scripts/sum_table.R")
 source("scripts/chart_one.R")
