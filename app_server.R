@@ -13,7 +13,7 @@ data_age <- read.csv("data/demographics_age.csv", stringsAsFactors = FALSE)
 data_race <- read.csv("data/demographics_race.csv", stringsAsFactors = FALSE)
 data_elect <- read.csv("data/winning_Odds.csv", stringsAsFactors = FALSE)
 race_and_vote <- merge(data_race, data_elect, by = 1)
-age_and_vote <- merge(age_data, data_elect, by = 1)
+age_and_vote <- merge(data_age, data_elect, by = 1)
 
 server <- function(input, output) {
   # Page 1
