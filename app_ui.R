@@ -218,13 +218,31 @@ overview_panel <- tabPanel(
     overview_sidebar_content
   )
 )
-
+# Conclusion Page
+conclusion_page <- mainPanel(
+  tableOutput(trump_white_table(race_and_vote)),
+  tableOutput(trump_nonwhite_table(race_and_vote)),
+  tableOutput(biden_age_table(age_and_vote))
+)
+conclusion_sidebar <- sidebarPanel(
+  h1("Testing")
+)
+conclusion_panel <- tabPanel(
+  "Conclusion Information",
+  titlePanel("Conclusion Information of Odds, Race, and Age"),
+  sidebarLayout(
+    conclusion_page,
+    conclusion_sidebar
+  )
+  
+)
 ui <- fluidPage(
   includeCSS("style.css"),
   navbarPage(
     "AF2 - 2020 Presidential Election",
     overview_panel,
     race_panel,
-    election_panel
+    election_panel,
+    conclusion_panel
   )
 )
